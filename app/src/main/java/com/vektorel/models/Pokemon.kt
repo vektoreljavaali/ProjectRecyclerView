@@ -1,6 +1,6 @@
 package com.vektorel.models
 
-public class Pokemon {
-    val name:String = ""
-    val url: String = ""
+class Pokemon {
+    var name:String = ""
+    var url: String = ""
 }

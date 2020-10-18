@@ -3,10 +3,12 @@ package com.vektorel.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vektorel.R
 import com.vektorel.models.Pokemon
+
 class PokemonListAdapter(pokemonList: ArrayList<Pokemon>, mContext: Context):
     RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>(){
 
@@ -18,6 +20,7 @@ class PokemonListAdapter(pokemonList: ArrayList<Pokemon>, mContext: Context):
 
         var ad = parent.findViewById<TextView>(R.id.txtad)
         var url = parent.findViewById<TextView>(R.id.txturl)
+        var image = parent.findViewById<ImageView>(R.id.imageView2)
 
     }
 
@@ -34,5 +37,6 @@ class PokemonListAdapter(pokemonList: ArrayList<Pokemon>, mContext: Context):
     override fun onBindViewHolder(holder: PokemonListViewHolder, position: Int) {
         holder.ad.text = pkList.get(position).name
         holder.url.text = pkList.get(position).url
+        holder.image.setImageResource(R.mipmap.ic_pokemon_image_round)
     }
 }
